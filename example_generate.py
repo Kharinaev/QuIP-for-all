@@ -63,7 +63,7 @@ def main(model_path, compile, interactive, num_samples, max_tokens, top_k):
     device = "cuda"
     model = load_quantized_model(model_path)
     model = model.to(device).eval()
-    model._setup_cache(StaticCache, 1, max_cache_len=2048)
+    # model._setup_cache(StaticCache, 1, max_cache_len=2048)
     tokenizer = AutoTokenizer.from_pretrained(model_path)
     if compile:
         global decode_one_tokens

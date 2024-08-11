@@ -2,7 +2,8 @@ import torch
 import torch._custom_ops
 from torch import Tensor
 
-import fast_hadamard_transform_cuda
+# import fast_hadamard_transform_cuda
+from fast_hadamard_transform import hadamard_transform
 import quiptools_cuda
 
 my_lib = torch.library.Library("quip_lib", "DEF")
@@ -17,7 +18,8 @@ def hadamard_abstract(x: Tensor, scale: float) -> Tensor:
 
 @torch._custom_ops.impl("quip_lib::hadamard", device_types="cuda")
 def hadamard_cuda(x: Tensor, scale: float) -> Tensor:
-    return fast_hadamard_transform_cuda.fast_hadamard_transform(x, scale)
+    # return fast_hadamard_transform_cuda.fast_hadamard_transform(x, scale)
+    return hadamard_transform(x, scale)
 
 @torch._custom_ops.custom_op("quip_lib::e8p_mm_origorder")
 def e8p_mm_origorder(x: Tensor, Qidxs: Tensor, grid: Tensor) -> Tensor:
