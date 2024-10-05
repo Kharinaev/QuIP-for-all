@@ -4,7 +4,7 @@ E8 3 bit.
 Made from 2 bit E8P + 1 bit E8 with RVQ.
 """
 from fractions import Fraction
-from functools import cache
+from functools import lru_cache
 
 import numpy as np
 import torch
@@ -13,7 +13,7 @@ from torch import nn
 from .e8p12 import get_full_grid, get_packed_abs_grid, _E8P_CODESZ
 
 
-@cache
+@lru_cache
 def get_e81bgrid():
     intr = torch.arange(-4, 4)
     hintr = intr + 1 / 2
@@ -50,7 +50,7 @@ def get_e81bgrid():
     return e8
 
 
-@cache
+@lru_cache
 def pack_e81b(cba):
     cba = cba[:, [0, 2, 4, 6, 1, 3, 5, 7]]
     cba = cba * 2

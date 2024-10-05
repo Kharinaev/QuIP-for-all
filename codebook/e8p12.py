@@ -7,7 +7,7 @@ The total codebook is all 2^7 flips of these 256 entries (2^15) +- 1/4
 which makes 2^16 entries.
 This corresponds to a subset of E8 + 1/4
 """
-from functools import cache
+from functools import lru_cache
 
 import numpy as np
 import torch
@@ -60,7 +60,7 @@ def get_norm12():
     ]) / 2
 
 
-@cache
+@lru_cache
 def get_packed_abs_grid():
     intr = torch.arange(-4, 4)
     d8 = torch.cartesian_prod(*[intr] * 8).float() + 1 / 2
@@ -79,7 +79,7 @@ def get_packed_abs_grid():
     return acc
 
 
-@cache
+@lru_cache
 def get_full_grid(packed_abs_grid):
     synth_codebook = torch.zeros(1 << 16, 8)
     shuffle_map = [0, 2, 1, 3, 4, 6, 5, 7]

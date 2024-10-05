@@ -14,7 +14,7 @@ this results in a codebook of 256 points distributed as follows
     4 * 8 = 32           [1/2, 1/2, 1/2, 5/2]
     4 * 3 * 8 = 96       [1/2, 1/2, 3/2, 5/2]
 """
-from functools import cache
+from functools import lru_cache
 
 import torch
 from torch import nn
@@ -86,7 +86,7 @@ def code8_to_d4(i8):
             return code3_signs(i3, x)
 
 
-@cache
+@lru_cache
 def build_D4_CB():
     CB = torch.zeros(256, _D4_CODESZ)
     for i in range(256):

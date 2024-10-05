@@ -1,0 +1,7 @@
+__pycache__/
+quip_cuda/dist/
+quip_cuda/build/
+output_0.log output_1.log output_2.log
+*.log
+*.ipynb_checkpoints/
+quip_cuda/quiptools_cuda.egg-info/

@@ -596,8 +596,13 @@ class QuipQuantizer(object):
 
         # Step 4: End2end finetune
         if self.ft_epochs > 0:
-            module_names_after_last_block = get_preceding_modules(
-                model, self.block_name_to_quantize, reverse=True)
+
+            if 'QUANTIZE_LLAMA_31' in os.environ:
+                module_names_after_last_block = ['lm_head', 'model.norm']
+            else:
+                module_names_after_last_block = get_preceding_modules(
+                    model, self.block_name_to_quantize, reverse=True
+                )
             module = nn.Sequential(*[
                 recurse_getattr(model, name)
                 for name in reversed(module_names_after_last_block)

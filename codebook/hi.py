@@ -1,11 +1,11 @@
 # https://github.com/Cornell-RelaxML/quip-sharp/blob/main/lib/codebook/half_integer_4bit_1col.py
-from functools import cache
+from functools import lru_cache
 
 import torch
 from torch import nn
 
 
-@cache
+@lru_cache
 def get_grid():
     hintr = torch.arange(-8, 8) + 1 / 2
     return hintr.unsqueeze(-1)
