@@ -1,0 +1,7 @@
+# ninja log v5
+0	28942	1724602837860645414	/root/llm_quant_safety/quantization/QuIP-for-all/quip_cuda/build/temp.linux-x86_64-3.8/quiptools_wrapper.o	456490558f5e4b28
+1	66420	1724602875324639971	/root/llm_quant_safety/quantization/QuIP-for-all/quip_cuda/build/temp.linux-x86_64-3.8/origin_order.o	f467beb9e646f852
+0	66621	1724602875520639944	/root/llm_quant_safety/quantization/QuIP-for-all/quip_cuda/build/temp.linux-x86_64-3.8/e8p_gemv.o	38e23a06f919f50a
+36	27678	1724960682630876803	/root/llm_quant_safety/quantization/QuIP-for-all/quip_cuda/build/temp.linux-x86_64-3.8/quiptools_wrapper.o	456490558f5e4b28
+36	59270	1724960714214862967	/root/llm_quant_safety/quantization/QuIP-for-all/quip_cuda/build/temp.linux-x86_64-3.8/e8p_gemv.o	a970a9ba226a796c
+37	60238	1724960715178862550	/root/llm_quant_safety/quantization/QuIP-for-all/quip_cuda/build/temp.linux-x86_64-3.8/origin_order.o	6a20a8999c4b6169

@@ -1,0 +1,5 @@
+accelerate
+datasets
+fast-hadamard-transform
+torch
+transformers

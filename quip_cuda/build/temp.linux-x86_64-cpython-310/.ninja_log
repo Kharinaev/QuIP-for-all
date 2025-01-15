@@ -1,4 +1,0 @@
-# ninja log v5
-2	24076	1723292552000000000	/trinity/home/team14/workspace/quantization/quip/quip_cuda/build/temp.linux-x86_64-cpython-310/quiptools_wrapper.o	a29887b4c2d1987f
-2	60479	1723292588000000000	/trinity/home/team14/workspace/quantization/quip/quip_cuda/build/temp.linux-x86_64-cpython-310/origin_order.o	6b24410206b5be7b
-2	62753	1723292590000000000	/trinity/home/team14/workspace/quantization/quip/quip_cuda/build/temp.linux-x86_64-cpython-310/e8p_gemv.o	3bc499891d27bad
